@@ -25,6 +25,15 @@ public class Vetor {
         sb.append("}");
         return sb.toString();
     }
+    public boolean adiciona(Integer elemento) {
+        if (this.tamanho < this.elementos.length) {
+            this.elementos[this.tamanho] = elemento;
+            this.tamanho++;
+            return true;
+        }
+        return false;
+    }
+
 }
 
 
