@@ -10,6 +10,7 @@ public class Main {
         System.out.println("Posição do Elemento 2: " +
                 vetor.busca("Elemento 2"));
         vetor.remove(0);
+        vetor.adiciona(0, 10);
         System.out.println(vetor);
     }
 }
