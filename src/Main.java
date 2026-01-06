@@ -9,6 +9,7 @@ public class Main {
         System.out.println("Item na posição 0: " + vetor.busca(0));
         System.out.println("Posição do Elemento 2: " +
                 vetor.busca("Elemento 2"));
+        vetor.remove(0);
         System.out.println(vetor);
     }
 }
