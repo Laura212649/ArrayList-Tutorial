@@ -1,4 +1,5 @@
 import java.util.Arrays;
+
 public class Vetor {
     private Integer[] elementos;
     private int tamanho;
@@ -25,6 +26,7 @@ public class Vetor {
         sb.append("}");
         return sb.toString();
     }
+
     public boolean adiciona(Integer elemento) {
         if (this.tamanho < this.elementos.length) {
             this.elementos[this.tamanho] = elemento;
@@ -33,15 +35,18 @@ public class Vetor {
         }
         return false;
     }
+
     public int tamanho() {
         return this.tamanho;
     }
+
     public Integer busca(int posicao) {
         if (!(posicao >= 0 && posicao < tamanho)) {
             throw new IllegalArgumentException("Posição inválida.");
         }
         return this.elementos[posicao];
     }
+
     public int busca(String elemento) {
         for (int i = 0; i < this.tamanho; i++) {
             if (this.elementos[i].equals(elemento)) {
@@ -50,6 +55,7 @@ public class Vetor {
         }
         return -1;
     }
+
     public void remove(int posicao) {
         if (!(posicao >= 0 && posicao < tamanho)) {
             throw new IllegalArgumentException("Posição inválida");
@@ -59,6 +65,7 @@ public class Vetor {
         }
         this.tamanho--;
     }
+
     public boolean adiciona(int posicao, Integer elemento) {
         if (posicao < 0 || posicao >= tamanho) {
             throw new IllegalArgumentException("Posição inválida");
@@ -69,6 +76,29 @@ public class Vetor {
         this.elementos[posicao] = elemento;
         this.tamanho++;
         return true;
+
+    }
+
+    public enum SortType {
+        BUBBLE,
+        INSERTION,
+        SELECTION
+    }
+
+    public void sort(SortType sortType) {
+        switch (sortType) {
+            case BUBBLE:
+                BubbleSort.sort(elementos, tamanho);
+                break;
+            case INSERTION:
+                InsertionSort.sort(elementos, tamanho);
+                break;
+            case SELECTION:
+                SelectionSort.sort(elementos, tamanho);
+                break;
+            default:
+                throw new IllegalArgumentException("Tipo de ordenação inválido!");
+        }
     }
 }
 
