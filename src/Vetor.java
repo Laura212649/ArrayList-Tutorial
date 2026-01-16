@@ -1,5 +1,3 @@
-import java.util.Arrays;
-
 public class Vetor {
     private Integer[] elementos;
     private int tamanho;
@@ -47,7 +45,7 @@ public class Vetor {
         return this.elementos[posicao];
     }
 
-    public int busca(String elemento) {
+    public int buscaPosicao(Integer elemento) {
         for (int i = 0; i < this.tamanho; i++) {
             if (this.elementos[i].equals(elemento)) {
                 return i;
