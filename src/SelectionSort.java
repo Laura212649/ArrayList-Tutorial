@@ -6,13 +6,11 @@ public class SelectionSort {
             for (int j = i + 1; j < size; j++) {
                 if (array[j] < array[minIndex]) {
                     minIndex = j;
-
-                    int temp = array[minIndex];
-                    array[minIndex] = array[i];
-                    array[i] = temp;
                 }
             }
-
+            int temp = array[minIndex];
+            array[minIndex] = array[i];
+            array[i] = temp;
         }
 
     }
