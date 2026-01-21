@@ -12,8 +12,9 @@ public class SelectionSort {
                     array[i] = temp;
                 }
             }
-
+            int temp = array[minIndex];
+            array[minIndex] = array[i];
+            array[i] = temp;
         }
-
     }
 }
